@@ -1,0 +1,868 @@
+{
+ "cells": [
+  {
+   "cell_type": "raw",
+   "id": "a2188e9e-9eac-486f-b164-45351cce4352",
+   "metadata": {},
+   "source": [
+    "1. Discuss string slicing and provide examples.\n",
+    "   String slicing in Python is a method to extract a specific portion of a string using the syntax string[start:stop:step]. The start index is where the\n",
+    "   slice begins (inclusive),the stop index is where it ends (exclusive), and step is the interval between characters(optional). This allows efficient\n",
+    "   string manipulation, such as extracting substrings or reversing a string. \n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "faf7642f-38bb-40b4-8593-f2f0d9805704",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "pw s\n"
+     ]
+    }
+   ],
+   "source": [
+    "string = \"pw skills\"\n",
+    "print(string[slice(4)])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "id": "f48f9a94-0f73-440e-b506-161b1edd45af",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "pw skills\n"
+     ]
+    }
+   ],
+   "source": [
+    "string = \"pw skills\"\n",
+    "print(string[slice(0,9)])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "id": "bb15bac8-04e8-4047-b8e9-318fdb6cb82f",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "psl\n"
+     ]
+    }
+   ],
+   "source": [
+    "string = \"pw skills\"\n",
+    "print(string[slice(0,9,3)])\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "id": "54147dd9-aee7-4d2a-8399-637ef1f8aa63",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "pw skill\n"
+     ]
+    }
+   ],
+   "source": [
+    "string = \"pw skills\"\n",
+    "print(string[slice(-10,-1)])"
+   ]
+  },
+  {
+   "cell_type": "raw",
+   "id": "e9d1c232-c0f3-491d-b6db-cf7cc650af31",
+   "metadata": {},
+   "source": [
+    "2. Explain the key features of lists in Python.\n",
+    "In Python, a list is a built-in data structure that is used to store an ordered collection of itemsl. Lists are mutabe, meaning that their contents can be changed after the list has been created. They can hold a various of data type, including integers, floats, strings, and even other lists."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 18,
+   "id": "9e60f2db-99ee-46d3-b65a-b6a79b732b42",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[2, 4, 6, 'khushi', 'gupta']\n"
+     ]
+    }
+   ],
+   "source": [
+    "a = [2,4,6,\"khushi\",\"gupta\"]\n",
+    "print(a)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 20,
+   "id": "84709027-5ad1-45e1-a7c7-ee19da6d87b4",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[5, 56, 87, 59, 70, 42, 87, 37, 98]\n",
+      "[56.97, 5.8, 65.98, 5.9]\n",
+      "['integers', 'floats', 'strings', 'lists']\n",
+      "[4, 6, 7.5, 'khushi']\n"
+     ]
+    }
+   ],
+   "source": [
+    "#list of integers\n",
+    "a = [5,56,87,59,70,42,87,37,98]\n",
+    "#list of floats\n",
+    "b = [56.97,5.8,65.98,5.9]\n",
+    "#list of strings\n",
+    "c = [\"integers\",\"floats\",\"strings\",\"lists\"]\n",
+    "#mixed datatypes\n",
+    "d = [4,6,7.5,\"khushi\"]\n",
+    "\n",
+    "print(a)\n",
+    "print(b)\n",
+    "print(c)\n",
+    "print(d)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 22,
+   "id": "5d3317a7-0d12-48a8-a1ba-966997f4eafd",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[55, 55, 55, 55, 55]\n",
+      "[100, 100, 100, 100, 100, 100, 100, 100, 100, 100]\n"
+     ]
+    }
+   ],
+   "source": [
+    "a = [55]*5\n",
+    "b = [100]*10\n",
+    "print(a)\n",
+    "print(b)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 25,
+   "id": "2495beaa-39ed-426a-ba86-6eb33e90f3ec",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "50"
+      ]
+     },
+     "execution_count": 25,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "#access elements one by one\n",
+    "a = [20,30,0,40,50,60]\n",
+    "a[4]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 26,
+   "id": "6b542e8a-c40c-4444-bbf9-bca030b5dc75",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "0"
+      ]
+     },
+     "execution_count": 26,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "a[-4]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 27,
+   "id": "8d2043d2-2233-4ce2-9857-d2e784d3fcb9",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "[20, 30, 0, 40, 50, 60]"
+      ]
+     },
+     "execution_count": 27,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "a[0:]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 32,
+   "id": "d8252327-a01e-465d-9778-51b0456c960a",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "[20, 30, 0, 40]"
+      ]
+     },
+     "execution_count": 32,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "a[:4]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 33,
+   "id": "05902f4c-2a5b-421a-a348-7f8f97d97e88",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "[20, 30, 0, 40, 50, 60]"
+      ]
+     },
+     "execution_count": 33,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "a[:6]"
+   ]
+  },
+  {
+   "cell_type": "raw",
+   "id": "0914f5db-e255-4d3e-84d3-45c8cb36068d",
+   "metadata": {},
+   "source": [
+    "3. Describe how to access, modify, and delete elements in a list with examples."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 35,
+   "id": "62223b97-caea-496c-bfa4-a8d920a22ed5",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "[15]"
+      ]
+     },
+     "execution_count": 35,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "a = []\n",
+    "a.append(15)\n",
+    "a"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 40,
+   "id": "af952e4d-7e7d-430e-93ca-64d48870296a",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "[14, 76, 100, 56, 87, 40]"
+      ]
+     },
+     "execution_count": 40,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "a = [14,76,98,56,87,40]\n",
+    "a[2] = 100\n",
+    "a"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 41,
+   "id": "d96215a0-4b5b-4352-915b-1476a0a656c3",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[10, 20, 40, 50]\n"
+     ]
+    }
+   ],
+   "source": [
+    "a = [10,20,30,40,50]\n",
+    "a.remove(30)\n",
+    "print(a)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 42,
+   "id": "eb1b9abc-d613-4257-a593-3b338a540367",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "20"
+      ]
+     },
+     "execution_count": 42,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "a.pop(1)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 46,
+   "id": "6cd7b84d-6936-4fe0-aaf3-4ddac5e37c05",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "[4, 6, 0, 5]"
+      ]
+     },
+     "execution_count": 46,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "a = [4,6,8,0,5]\n",
+    "del a[2]\n",
+    "a"
+   ]
+  },
+  {
+   "cell_type": "raw",
+   "id": "00d94965-4585-4f14-8fa6-0ca00a1df177",
+   "metadata": {},
+   "source": [
+    "4. Compare and contrast tuples and lists with examples.\n",
+    "The main difference between lists and tuples is that tuples can't be changed after they're created, but lists can be modified. Tuples use less memory than lists. They are also a bit faster, especially when you are just looking up values. So, if you have data that you don't want to change, it's better to use tuples isnstead of lists. Tuples are represented by () and lists are represented by []. "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 47,
+   "id": "ce09b2ff-faee-4302-ba02-086243b3e829",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "[1, 2, 5, 4, 5]"
+      ]
+     },
+     "execution_count": 47,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "#example of lists\n",
+    "list_num = [1,2,3,4,5]\n",
+    "list_num[2] = 5\n",
+    "list_num"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 53,
+   "id": "46717ccc-2628-4b8a-88fc-9859c64bec54",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "TypeError",
+     "evalue": "'tuple' object does not support item assignment",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[1;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[1;31mTypeError\u001b[0m                                 Traceback (most recent call last)",
+      "Cell \u001b[1;32mIn[53], line 3\u001b[0m\n\u001b[0;32m      1\u001b[0m \u001b[38;5;66;03m#example of tuples\u001b[39;00m\n\u001b[0;32m      2\u001b[0m tuple_num \u001b[38;5;241m=\u001b[39m (\u001b[38;5;241m5\u001b[39m,\u001b[38;5;241m7\u001b[39m,\u001b[38;5;241m9\u001b[39m,\u001b[38;5;241m4\u001b[39m,\u001b[38;5;241m2\u001b[39m)\n\u001b[1;32m----> 3\u001b[0m \u001b[43mtuple_num\u001b[49m\u001b[43m[\u001b[49m\u001b[38;5;241;43m4\u001b[39;49m\u001b[43m]\u001b[49m \u001b[38;5;241m=\u001b[39m \u001b[38;5;241m5\u001b[39m\n\u001b[0;32m      4\u001b[0m tuple_num\n",
+      "\u001b[1;31mTypeError\u001b[0m: 'tuple' object does not support item assignment"
+     ]
+    }
+   ],
+   "source": [
+    "#example of tuples\n",
+    "tuple_num = (5,7,9,4,2)\n",
+    "tuple_num[4] = 5\n",
+    "tuple_num"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 57,
+   "id": "d179fad6-a1a4-4d13-aefb-9677f83e1f23",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "(5, 7, 8, 4)"
+      ]
+     },
+     "execution_count": 57,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "list = [78,56,87,\"kukki\",\"khushi\"]\n",
+    "tuple = (5,7,8,4,9,3)\n",
+    "tuple[:4]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 58,
+   "id": "0d3b7ea4-1e27-49a6-b15e-b91dc898ca2c",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "['kukki', 'vish']"
+      ]
+     },
+     "execution_count": 58,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "list[3:5]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 59,
+   "id": "040a6f41-fee9-4f06-a971-5e6aa3081e15",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "['kukki', 'nimmi', 'tanisha', 'mona']"
+      ]
+     },
+     "execution_count": 59,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "list1 = [\"kukki\",\"nimmi\"]\n",
+    "list2 = [\"tanisha\",\"mona\"]\n",
+    "list1+list2\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 60,
+   "id": "689764ca-05b3-4188-bc57-74d870ca6629",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "(6, 7, 9, 5, 7, 67, 98, 60, 80)"
+      ]
+     },
+     "execution_count": 60,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "tuple1 = (6,7,9,5,7)\n",
+    "tuple2 = (67,98,60,80)\n",
+    "tuple1+tuple2"
+   ]
+  },
+  {
+   "cell_type": "raw",
+   "id": "bbe18627-f214-4bc5-bb21-d071b4c0f745",
+   "metadata": {},
+   "source": [
+    "5. Describe the key features of sets and provide examples of their use.\n",
+    "A set is an unordered collection data type that is iterabe and has no duplicate elements. While sets are mutable, meaning you can add or remove elements after their creation, the individual elements within the set must be immutable and can not be changed directly. Sets are represented by {}.\n",
+    "The major advantage of using a set, as opposed to a list, is that it has a highly optimized method for checking whether a specific element is contained in the set. This is based on a data structure  known as a hash table. Since sets are unordered, we can not access items using indexes as we do in lists.\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 61,
+   "id": "13f96c1a-679f-4409-ac70-185dd4593cf9",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "set"
+      ]
+     },
+     "execution_count": 61,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "set = {\"data science\",\"full stack\",\"web dev\"}\n",
+    "type(set)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 73,
+   "id": "0a662765-7932-44dc-973e-ceff6bb96fd2",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "{'khushi', 'mona', 'nimmi'}"
+      ]
+     },
+     "execution_count": 73,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "thisset = {\"khushi\",\"mona\",\"nimmi\",\"khushi\"}\n",
+    "thisset"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 74,
+   "id": "0fa12a41-048f-4544-9e16-fc28df454570",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "{1, 2, 3, 'kukki', 'nimmi', 'true'}"
+      ]
+     },
+     "execution_count": 74,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "thisset = {\"kukki\",\"nimmi\",\"true\",1,2,3}\n",
+    "thisset"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 76,
+   "id": "e7685766-90bf-45e6-b3f2-30de526aedee",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "6"
+      ]
+     },
+     "execution_count": 76,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "len(thisset)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 78,
+   "id": "7a3f6710-5ae7-43c9-8168-a3813029c8f6",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "{1, 2, 3.5, 5, 6.7, 'abc', 'true'}"
+      ]
+     },
+     "execution_count": 78,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "thisset = {1,2,5,3.5,6.7,\"true\",\"abc\"}\n",
+    "thisset"
+   ]
+  },
+  {
+   "cell_type": "raw",
+   "id": "67100886-e590-4698-8107-b17c413c3369",
+   "metadata": {},
+   "source": [
+    "6. Discuss the use cases of tuples and sets in Python programming.\n",
+    "Tuples is like List but immutable so it has lesser in built methods. Tuples are faster than Lists, but it is noticeable only when size of the tuple is considerably large.\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 80,
+   "id": "256ea106-5128-4c26-96d3-9895c9bc9940",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "TypeError",
+     "evalue": "'tuple' object does not support item assignment",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[1;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[1;31mTypeError\u001b[0m                                 Traceback (most recent call last)",
+      "Cell \u001b[1;32mIn[80], line 2\u001b[0m\n\u001b[0;32m      1\u001b[0m tup \u001b[38;5;241m=\u001b[39m (\u001b[38;5;241m1\u001b[39m,[\u001b[38;5;241m2\u001b[39m],\u001b[38;5;241m3\u001b[39m)\n\u001b[1;32m----> 2\u001b[0m \u001b[43mtup\u001b[49m\u001b[43m[\u001b[49m\u001b[38;5;241;43m0\u001b[39;49m\u001b[43m]\u001b[49m\u001b[38;5;241m=\u001b[39m\u001b[38;5;241m3\u001b[39m\n",
+      "\u001b[1;31mTypeError\u001b[0m: 'tuple' object does not support item assignment"
+     ]
+    }
+   ],
+   "source": [
+    "tup = (1,[2],3)\n",
+    "tup[0]=3"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 82,
+   "id": "4d5495e3-581a-4f1b-994c-3afa01b83cf2",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "(1, [2, 3], 3)"
+      ]
+     },
+     "execution_count": 82,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "tup[1].append(3)\n",
+    "tup"
+   ]
+  },
+  {
+   "cell_type": "raw",
+   "id": "4c317f32-b43e-49a3-a882-2118ea9cdc8a",
+   "metadata": {},
+   "source": [
+    "A set is an unordered collection data type that is iterabe and has no duplicate elements. While sets are mutable, meaning you can add or remove elements after their creation, the individual elements within the set must be immutable and can not be changed directly. Sets are represented by {}.\n",
+    "The major advantage of using a set, as opposed to a list, is that it has a highly optimized method for checking whether a specific element is contained in the set. This is based on a data structure  known as a hash table. Since sets are unordered, we can not access items using indexes as we do in lists.\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 83,
+   "id": "4368c7fb-14f0-4250-8514-598010da27d9",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "set"
+      ]
+     },
+     "execution_count": 83,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "set = {\"data science\",\"full stack\",\"web dev\"}\n",
+    "type(set)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 84,
+   "id": "898306e1-e376-4cce-abec-dd28259dd57d",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "{'khushi', 'mona', 'nimmi'}"
+      ]
+     },
+     "execution_count": 84,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "thisset = {\"khushi\",\"mona\",\"nimmi\",\"khushi\"}\n",
+    "thisset"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 85,
+   "id": "656404b8-fa89-4082-bc4a-d506352acb55",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "{1, 2, 3, 'kukki', 'nimmi', 'true'}"
+      ]
+     },
+     "execution_count": 85,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "thisset = {\"kukki\",\"nimmi\",\"true\",1,2,3}\n",
+    "thisset"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 86,
+   "id": "ccaba89b-16f2-45f7-81ec-f1884e7c9425",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "6"
+      ]
+     },
+     "execution_count": 86,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "len(thisset)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 87,
+   "id": "2deac3e4-4304-4525-98e6-b2bc95f5318c",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "{1, 2, 3.5, 5, 6.7, 'abc', 'true'}"
+      ]
+     },
+     "execution_count": 87,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "thisset = {1,2,5,3.5,6.7,\"true\",\"abc\"}\n",
+    "thisset"
+   ]
+  },
+  {
+   "cell_type": "raw",
+   "id": "67e66be9-09c0-4069-9cc4-dd4842489458",
+   "metadata": {},
+   "source": [
+    "7. Describe how to add, modify, and delete items in a dictionary with examples.\n",
+    "A Python dictionary is a data structure "
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.12.3"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
